@@ -94,5 +94,65 @@
     "description": "Practical frameworks for customer discovery, market segmentation, positioning, and go-to-market strategy.",
     "url": "https://ocw.mit.edu/courses/15-390-new-enterprises-spring-2013/", "subjects": ["Business"],
     "access": "Completely free", "certificate": "No certificate", "format": "Course materials"
+  },
+  {
+    "id": "mit-python", "kind": "course", "institution": "MIT", "name": "Introduction to Computer Science and Programming in Python",
+    "description": "Learn the foundations of computation and build practical programming skills in Python, with no prior coding experience required.",
+    "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/", "subjects": ["Computer Science"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video, notes & assignments"
+  },
+  {
+    "id": "mit-algorithms", "kind": "course", "institution": "MIT", "name": "Introduction to Algorithms",
+    "description": "Study data structures, algorithmic paradigms, performance analysis, and mathematical models for computational problems.",
+    "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/", "subjects": ["Computer Science", "Math"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video, problems & exams"
+  },
+  {
+    "id": "mit-circuits", "kind": "course", "institution": "MIT", "name": "Circuits and Electronics",
+    "description": "Build a foundation in circuit models, digital logic, amplifiers, energy storage, and electronic system design.",
+    "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/", "subjects": ["Engineering", "Computer Science"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video, problems & exams"
+  },
+  {
+    "id": "mit-dynamics", "kind": "course", "institution": "MIT", "name": "Engineering Dynamics",
+    "description": "Explore motion, forces, angular momentum, rigid-body rotation, Lagrange equations, and mechanical vibration.",
+    "url": "https://ocw.mit.edu/courses/2-003sc-engineering-dynamics-fall-2011/", "subjects": ["Engineering", "Science", "Math"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video & problem sets"
+  },
+  {
+    "id": "ou-open-education", "kind": "course", "institution": "The Open University", "name": "Open Education",
+    "description": "Examine how openness, technology, licensing, and new models of participation are reshaping education.",
+    "url": "https://www.open.edu/openlearn/education-development/open-education/content-section-0", "subjects": ["Education"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Self-paced course"
+  },
+  {
+    "id": "ou-teaching-online", "kind": "course", "institution": "The Open University", "name": "Take Your Teaching Online",
+    "description": "Learn how to plan, support, and deliver effective online learning for students in education or workplace training.",
+    "url": "https://www.open.edu/openlearn/education-development/education/take-your-teaching-online/content-section-overview", "subjects": ["Education"],
+    "access": "Completely free", "certificate": "Free statement and badge", "format": "Self-paced course"
+  },
+  {
+    "id": "ou-spanish", "kind": "course", "institution": "The Open University", "name": "Getting Started with Spanish 1",
+    "description": "Develop beginner Spanish pronunciation and everyday communication through guided activities and cultural context.",
+    "url": "https://www.open.edu/openlearn/languages/getting-started-spanish-1", "subjects": ["Languages"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Interactive course"
+  },
+  {
+    "id": "ou-french", "kind": "course", "institution": "The Open University", "name": "Get Ready for Beginners’ French",
+    "description": "Try practical French while exploring the language, its cultures, and the habits that help new language learners succeed.",
+    "url": "https://www.open.edu/openlearn/languages/get-ready-beginners-french/content-section-overview", "subjects": ["Languages"],
+    "access": "Completely free", "certificate": "Free statement and badge", "format": "Interactive course"
+  },
+  {
+    "id": "mit-linear-algebra", "kind": "course", "institution": "MIT", "name": "Linear Algebra",
+    "description": "Understand matrices, vector spaces, determinants, eigenvalues, and the linear algebra used across science and engineering.",
+    "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/", "subjects": ["Math"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video, problems & exams"
+  },
+  {
+    "id": "mit-calculus", "kind": "course", "institution": "MIT", "name": "Single Variable Calculus",
+    "description": "A complete independent-study course in differentiation, integration, applications, and infinite series.",
+    "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/", "subjects": ["Math"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video, problems & exams"
   }
 ]
