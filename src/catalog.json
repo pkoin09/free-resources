@@ -1,0 +1,98 @@
+[
+  {
+    "id": "mit-ocw", "kind": "portal", "institution": "MIT", "name": "MIT OpenCourseWare",
+    "description": "Thousands of course sites with notes, assignments, exams, and many full lecture series across MIT's curriculum.",
+    "url": "https://ocw.mit.edu/", "subjects": ["Arts & Humanities", "Business", "Computer Science", "Education", "Engineering", "Health & Medicine", "Math", "Science", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Self-paced materials", "featured": true
+  },
+  {
+    "id": "harvard-free", "kind": "portal", "institution": "Harvard University", "name": "Harvard Free Courses",
+    "description": "A filtered catalog of Harvard courses that can be studied online for free, from literature and religion to health and data science.",
+    "url": "https://pll.harvard.edu/catalog/free", "subjects": ["Arts & Humanities", "Business", "Computer Science", "Education", "Health & Medicine", "Math", "Science", "Social Sciences"],
+    "access": "Free learning", "certificate": "Certificate may cost extra", "format": "Courses", "featured": true
+  },
+  {
+    "id": "stanford-everyone", "kind": "portal", "institution": "Stanford University", "name": "Stanford for Everyone",
+    "description": "Stanford's public gateway to online learning, community programs, and selected free learning opportunities.",
+    "url": "https://www.stanford.edu/academics/everyone/", "subjects": ["Arts & Humanities", "Business", "Computer Science", "Education", "Health & Medicine", "Math", "Science", "Social Sciences"],
+    "access": "Mixed catalog", "certificate": "Varies by offering", "format": "Courses & programs", "featured": true
+  },
+  {
+    "id": "openlearn", "kind": "portal", "institution": "The Open University", "name": "OpenLearn",
+    "description": "Hundreds of free courses in nine subject areas, from short introductions to longer, badged learning experiences.",
+    "url": "https://www.open.edu/openlearn/free-courses", "subjects": ["Arts & Humanities", "Business", "Computer Science", "Education", "Health & Medicine", "Math", "Science", "Social Sciences"],
+    "access": "Completely free", "certificate": "Free statement; some free badges", "format": "Self-paced courses", "featured": true
+  },
+  {
+    "id": "yale-open", "kind": "portal", "institution": "Yale University", "name": "Open Yale Courses",
+    "description": "Complete lecture courses with syllabi, readings, transcripts, exams, and downloadable video or audio.",
+    "url": "https://oyc.yale.edu/courses", "subjects": ["Arts & Humanities", "Math", "Science", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Lecture courses", "featured": true
+  },
+  {
+    "id": "cmu-oli", "kind": "portal", "institution": "Carnegie Mellon University", "name": "Open Learning Initiative",
+    "description": "Evidence-based courseware with interactive practice in STEM, languages, social sciences, and more.",
+    "url": "https://oli.cmu.edu/courses/independent-learner-courses/", "subjects": ["Computer Science", "Education", "Health & Medicine", "Languages", "Math", "Science", "Social Sciences"],
+    "access": "Free & low-cost options", "certificate": "Generally no certificate", "format": "Interactive courses", "featured": true
+  },
+  {
+    "id": "berkeley-moocs", "kind": "portal", "institution": "UC Berkeley", "name": "Berkeley Online Learning",
+    "description": "Noncredit Berkeley courses on edX and Coursera, with many offerings available to audit at no charge.",
+    "url": "https://rtl.berkeley.edu/services-programs/edx-and-coursera", "subjects": ["Business", "Computer Science", "Education", "Engineering", "Health & Medicine", "Science", "Social Sciences"],
+    "access": "Free to audit", "certificate": "Certificate costs extra", "format": "Platform courses", "featured": false
+  },
+  {
+    "id": "michigan-online", "kind": "portal", "institution": "University of Michigan", "name": "Michigan Online",
+    "description": "A broad catalog of open online courses and short public Teach-Outs, with access terms clearly shown per offering.",
+    "url": "https://online.umich.edu/catalog/", "subjects": ["Arts & Humanities", "Business", "Computer Science", "Education", "Health & Medicine", "Science", "Social Sciences"],
+    "access": "Free & paid options", "certificate": "Varies by offering", "format": "Courses & Teach-Outs", "featured": false
+  },
+  {
+    "id": "mit-justice", "kind": "course", "institution": "MIT", "name": "Justice",
+    "description": "An introduction to political philosophy through debates about equality, rights, property, and the role of government.",
+    "url": "https://ocw.mit.edu/courses/24-04j-justice-spring-2012/", "subjects": ["Arts & Humanities", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Full course materials"
+  },
+  {
+    "id": "mit-physics", "kind": "course", "institution": "MIT", "name": "Classical Mechanics",
+    "description": "A foundational physics course covering motion, forces, energy, momentum, and rotational dynamics.",
+    "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/", "subjects": ["Science", "Math"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video & problem sets"
+  },
+  {
+    "id": "yale-psych", "kind": "course", "institution": "Yale University", "name": "Introduction to Psychology",
+    "description": "Explore thought and behavior through perception, learning, memory, emotion, development, and social psychology.",
+    "url": "https://oyc.yale.edu/psychology/psyc-110", "subjects": ["Health & Medicine", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video lectures"
+  },
+  {
+    "id": "yale-finance", "kind": "course", "institution": "Yale University", "name": "Financial Markets",
+    "description": "An overview of risk, insurance, banking, behavioral finance, and the institutions that shape modern markets.",
+    "url": "https://oyc.yale.edu/economics/econ-252-11", "subjects": ["Business", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video lectures"
+  },
+  {
+    "id": "ou-climate", "kind": "course", "institution": "The Open University", "name": "Climate change: transitions to sustainability",
+    "description": "Study the social and technological transitions needed to respond to climate change and build a sustainable future.",
+    "url": "https://www.open.edu/openlearn/nature-environment/climate-change-transitions-sustainability/content-section-overview", "subjects": ["Science", "Social Sciences"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Self-paced course"
+  },
+  {
+    "id": "harvard-literature", "kind": "course", "institution": "Harvard University", "name": "Masterpieces of World Literature",
+    "description": "Read major works across cultures and examine how literature travels between languages, places, and eras.",
+    "url": "https://pll.harvard.edu/course/masterpieces-world-literature", "subjects": ["Arts & Humanities", "Languages"],
+    "access": "Free learning", "certificate": "Verified certificate costs extra", "format": "Online course"
+  },
+  {
+    "id": "harvard-health", "kind": "course", "institution": "Harvard University", "name": "The Health Effects of Climate Change",
+    "description": "Learn how climate change affects human health and what communities can do to reduce those effects.",
+    "url": "https://pll.harvard.edu/course/health-effects-climate-change", "subjects": ["Health & Medicine", "Science"],
+    "access": "Free learning", "certificate": "Verified certificate costs extra", "format": "Online course"
+  },
+  {
+    "id": "mit-entrepreneurship", "kind": "course", "institution": "MIT", "name": "Entrepreneurial Marketing",
+    "description": "Practical frameworks for customer discovery, market segmentation, positioning, and go-to-market strategy.",
+    "url": "https://ocw.mit.edu/courses/15-390-new-enterprises-spring-2013/", "subjects": ["Business"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Course materials"
+  }
+]
