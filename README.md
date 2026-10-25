@@ -22,7 +22,10 @@ Each listing should:
 - link directly to an official university source;
 - describe free access precisely (`Completely free`, `Free learning`, `Free to audit`, or a clearly labeled mixed catalog);
 - state separately whether a certificate is available or costs extra;
+- set `platform` when delivery is through a third party such as `edX` or `Coursera` (direct MIT OCW, Open Yale, OpenLearn, and Harvard Online links are recognized automatically);
 - use `kind: "portal"` for university-wide catalogs and `kind: "course"` for individual courses.
+
+Keep the institution and platform separate. For example, a HarvardX course hosted on edX should use `institution: "Harvard University"` and `platform: "edX"`, and should appear only once in the catalog.
 
 Check links and access terms periodically because course platforms change their pricing and enrollment rules.
 

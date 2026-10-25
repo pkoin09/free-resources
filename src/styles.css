@@ -18,3 +18,5 @@
   .portal-footer svg{width:16px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orbit{animation:none}*{transition:none!important}}
+.filter-panel{grid-template-columns:1.55fr repeat(3,.65fr)}
+@media(max-width:700px){.filter-panel{grid-template-columns:1fr}}

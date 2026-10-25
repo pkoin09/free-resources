@@ -154,5 +154,107 @@
     "description": "A complete independent-study course in differentiation, integration, applications, and infinite series.",
     "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/", "subjects": ["Math"],
     "access": "Completely free", "certificate": "No certificate", "format": "Video, problems & exams"
+  },
+  {
+    "id": "yale-death", "kind": "course", "institution": "Yale University", "name": "Death",
+    "description": "A philosophical investigation of mortality, personal identity, immortality, the value of life, and attitudes toward death.",
+    "url": "https://oyc.yale.edu/death/phil-176", "subjects": ["Arts & Humanities", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video lectures"
+  },
+  {
+    "id": "yale-roman-architecture", "kind": "course", "institution": "Yale University", "name": "Roman Architecture",
+    "description": "Survey the buildings, engineering, urban planning, monuments, and visual culture of Rome and its empire.",
+    "url": "https://oyc.yale.edu/history-of-art/hsar-252", "subjects": ["Arts & Humanities", "Engineering"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video lectures"
+  },
+  {
+    "id": "ou-writing-fiction", "kind": "course", "institution": "The Open University", "name": "Start Writing Fiction",
+    "description": "Develop characters and settings, explore genre, and begin evaluating your strengths as a fiction writer.",
+    "url": "https://www.open.edu/openlearn/history-the-arts/creative-writing/start-writing-fiction/content-section-0/", "subjects": ["Arts & Humanities"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Self-paced course"
+  },
+  {
+    "id": "ou-entrepreneurship", "kind": "course", "institution": "The Open University", "name": "Entrepreneurship – From Ideas to Reality",
+    "description": "Turn an idea into a practical business model while exploring funding, risk, resources, and growth decisions.",
+    "url": "https://www.open.edu/openlearn/money-business/entrepreneurship-ideas-reality", "subjects": ["Business"],
+    "access": "Completely free", "certificate": "Free statement and badge", "format": "Self-paced course"
+  },
+  {
+    "id": "ou-working-teams", "kind": "course", "institution": "The Open University", "name": "Working in Teams",
+    "description": "Build practical teamwork skills across communication, roles, diversity, conflict, and distributed collaboration.",
+    "url": "https://www.open.edu/openlearn/money-business/working-teams/content-section-overview", "subjects": ["Business"],
+    "access": "Completely free", "certificate": "Free statement and badge", "format": "Self-paced course"
+  },
+  {
+    "id": "yale-game-theory", "kind": "course", "institution": "Yale University", "name": "Game Theory",
+    "description": "Learn strategic thinking through dominance, Nash equilibrium, signaling, incentives, bargaining, and repeated games.",
+    "url": "https://oyc.yale.edu/economics/econ-159", "subjects": ["Business", "Math", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video, problems & exams"
+  },
+  {
+    "id": "mit-math-for-cs", "kind": "course", "institution": "MIT", "name": "Mathematics for Computer Science",
+    "description": "Study proofs, discrete structures, graph theory, counting, and probability for computer science and engineering.",
+    "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/", "subjects": ["Computer Science", "Math"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video, text & problems"
+  },
+  {
+    "id": "ou-cyber-security", "kind": "course", "institution": "The Open University", "name": "Introduction to Cyber Security",
+    "description": "Recognize online threats and learn practical foundations in malware, networks, cryptography, identity, and risk.",
+    "url": "https://www.open.edu/openlearn/digital-computing/introduction-cyber-security-stay-safe-online/", "subjects": ["Computer Science"],
+    "access": "Completely free", "certificate": "Free statement and badge", "format": "Interactive course"
+  },
+  {
+    "id": "ou-digital-childhood", "kind": "course", "institution": "The Open University", "name": "Childhood in the Digital Age",
+    "description": "Evaluate evidence about how digital technology affects children’s development, relationships, learning, and opportunity.",
+    "url": "https://www.open.edu/openlearn/openlearn/education-development/childhood-the-digital-age/content-section-overview", "subjects": ["Education", "Social Sciences"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Self-paced course"
+  },
+  {
+    "id": "ou-child-development", "kind": "course", "institution": "The Open University", "name": "Supporting Children’s Development",
+    "description": "An introductory course on development, learning, behavior, special educational needs, and disabilities.",
+    "url": "https://www.open.edu/openlearn/education-development/childhood-youth/supporting-childrens-development/content-section-overview", "subjects": ["Education", "Health & Medicine"],
+    "access": "Completely free", "certificate": "Free statement and badge", "format": "Self-paced course"
+  },
+  {
+    "id": "ou-ai-matters", "kind": "course", "institution": "The Open University", "name": "An Introduction to Artificial Intelligence",
+    "description": "Explore the history, opportunities, societal effects, ethical questions, and risks surrounding artificial intelligence.",
+    "url": "https://www.open.edu/openlearn/education-development/ai-matters", "subjects": ["Education", "Computer Science", "Social Sciences"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Short online course"
+  },
+  {
+    "id": "mit-aerospace", "kind": "course", "institution": "MIT", "name": "Introduction to Aerospace Engineering and Design",
+    "description": "Connect aeronautics, astronautics, physics, and design through foundational concepts and hands-on project materials.",
+    "url": "https://ocw.mit.edu/courses/16-00-introduction-to-aerospace-engineering-and-design-spring-2003/", "subjects": ["Engineering", "Science"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Projects & problem sets"
+  },
+  {
+    "id": "mit-energy-conversion", "kind": "course", "institution": "MIT", "name": "Fundamentals of Advanced Energy Conversion",
+    "description": "Apply thermodynamics, chemistry, and transport to energy conversion, storage, power, and transportation systems.",
+    "url": "https://ocw.mit.edu/courses/2-60j-fundamentals-of-advanced-energy-conversion-spring-2020/", "subjects": ["Engineering", "Science"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Notes, problems & projects"
+  },
+  {
+    "id": "yale-epidemics", "kind": "course", "institution": "Yale University", "name": "Epidemics in Western Society Since 1600",
+    "description": "Trace epidemic disease, public health, medicine, ethics, and social response from plague through modern outbreaks.",
+    "url": "https://oyc.yale.edu/history/hist-234", "subjects": ["Health & Medicine", "Arts & Humanities", "Social Sciences"],
+    "access": "Completely free", "certificate": "No certificate", "format": "Video lectures"
+  },
+  {
+    "id": "ou-public-health", "kind": "course", "institution": "The Open University", "name": "Introducing Public Health",
+    "description": "Understand the changing scope of public health and health promotion within local and global contexts.",
+    "url": "https://www.open.edu/openlearn/health-sports-psychology/public-health/introducing-public-health/content-section-0", "subjects": ["Health & Medicine", "Social Sciences"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Self-paced course"
+  },
+  {
+    "id": "ou-chinese", "kind": "course", "institution": "The Open University", "name": "Beginners’ Chinese: A Taster Course",
+    "description": "Try Mandarin pronunciation, tones, characters, greetings, numbers, and cultural conventions for absolute beginners.",
+    "url": "https://www.open.edu/openlearn/languages/beginners-chinese-taster-course/content-section-0", "subjects": ["Languages"],
+    "access": "Completely free", "certificate": "Free statement", "format": "Interactive course"
+  },
+  {
+    "id": "ou-everyday-english", "kind": "course", "institution": "The Open University", "name": "Everyday English 1",
+    "description": "Strengthen practical speaking, listening, reading, and writing skills for everyday life, work, and further study.",
+    "url": "https://www.open.edu/openlearn/languages/everyday-english-1/", "subjects": ["Languages"],
+    "access": "Completely free", "certificate": "Free statement and badge", "format": "Interactive course"
   }
 ]
