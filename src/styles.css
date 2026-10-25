@@ -4,4 +4,17 @@
 @media(max-width:980px){.topbar{grid-template-columns:1fr auto}.topbar nav{display:none}.hero{grid-template-columns:1fr}.hero-art{min-height:450px;border-left:0}.hero-proof{position:relative;width:100%;grid-column:1}.portal-grid{grid-template-columns:repeat(2,1fr)}.access-section{gap:4rem}}
 @media(max-width:700px){.topbar{height:70px}.header-cta{font-size:0}.hero-copy{padding:4.5rem 1rem 3.5rem}h1{font-size:clamp(3.5rem,17vw,5.6rem)}.hero-actions{align-items:flex-start;flex-direction:column;gap:1.4rem}.hero-art{min-height:340px}.hero-proof{grid-template-columns:1fr}.hero-proof span{border-bottom:1px solid var(--line)}.university-section,.explore-section{padding:5rem 1rem}.section-heading{grid-template-columns:1fr;gap:1.5rem;margin-bottom:3rem}.section-heading h2,.access-section h2{font-size:3.5rem}.portal-grid{grid-template-columns:1fr}.portal-card{min-height:290px}.filter-panel{grid-template-columns:1fr}.select-field{border-left:0;border-top:1px solid var(--line);min-height:64px}.resource-card{grid-template-columns:34px 1fr}.card-action{grid-column:2}.access-section{grid-template-columns:1fr;gap:3rem;padding:5rem 1rem}footer{grid-template-columns:1fr;text-align:center;gap:2rem}footer .wordmark,footer>div{justify-self:center}}
 @media(max-width:430px){.hero-art{min-height:310px}.filter-panel{margin-inline:-1rem;border-inline:0}.resource-card{grid-template-columns:26px 1fr}.card-action{grid-column:1/-1;padding-left:42px}.card-meta span:last-child{display:none}.access-steps article{grid-template-columns:28px 1fr}.access-steps svg{display:none}}
+@media(max-width:700px){
+  .portal-grid{border-left:0}
+  .portal-card{min-height:0;padding:1.1rem 0;display:grid;grid-template-columns:28px minmax(0,1fr);gap:.45rem .8rem;align-items:start;border-right:0;transform:none}
+  .portal-card:hover{transform:none}
+  .portal-card:active{background:var(--lime)}
+  .portal-count{grid-column:1;grid-row:1/3;padding-top:.15rem}
+  .portal-card>div:nth-child(2){grid-column:2;margin:0}
+  .portal-institution{display:block;font-size:.56rem;line-height:1.3}
+  .portal-card h3{font-size:1.2rem;line-height:1.08;margin:.35rem 0 0;letter-spacing:-.045em}
+  .portal-card p{display:none}
+  .portal-footer{grid-column:2;display:flex;margin-top:.15rem}
+  .portal-footer svg{width:16px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.orbit{animation:none}*{transition:none!important}}
