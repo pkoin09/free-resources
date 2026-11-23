@@ -131,7 +131,7 @@ export default function App() {
   return (
     <>
       <header className="topbar">
-        <a className="wordmark" href="#top">
+        <a className="wordmark" href="/">
           <b>FR</b>
           <span>
             Free
@@ -139,15 +139,19 @@ export default function App() {
             Resources
           </span>
         </a>
-        <nav>
-          <a href="#explore">Course index</a>
-          <a href="#universities">University collections</a>
-          <a href="#about">Research notes</a>
+        <nav className="top-tabs">
+          <a href="/" aria-current="page">Courses</a>
+          <a href="/jobs">Jobs</a>
         </nav>
         <a className="header-cta" href="#explore">
           View the index <ArrowRight />
         </a>
       </header>
+      <nav className="sub-tabs" aria-label="Course sections">
+        <a href="#explore">Course index</a>
+        <a href="#universities">University collections</a>
+        <a href="#about">Research notes</a>
+      </nav>
       <main id="top">
         <section className="hero">
           <div className="hero-copy">
@@ -425,7 +429,7 @@ export default function App() {
 
       {/* footer */}
       <footer>
-        <a className="wordmark inverted" href="#top">
+        <a className="wordmark inverted" href="/">
           <b>FR</b>
           <span>
             Free
@@ -435,9 +439,7 @@ export default function App() {
         </a>
         <p>A research directory of publicly accessible university learning.</p>
         <div>
-          <a href="#explore">Course index</a>
-          <a href="#universities">University collections</a>
-          <a href="#about">Research notes</a>
+          <a href="/jobs">South Bay Job Guide</a>
         </div>
       </footer>
     </>
