@@ -1,41 +1,445 @@
-import { useMemo, useState } from 'react'
-import { ArrowRight, ArrowUpRight, BookOpen, Check, ChevronDown, Search, Sparkles, X } from 'lucide-react'
-import catalog from './catalog.json'
+import { useMemo, useState } from "react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  BookOpen,
+  Check,
+  ChevronDown,
+  Search,
+  Sparkles,
+  X,
+} from "lucide-react";
+import catalog from "./catalog.json";
 
-const subjects = ['All', ...Array.from(new Set(catalog.flatMap((item) => item.subjects))).sort()]
-const accessOptions = ['All access', 'Completely free', 'Free learning / audit']
-const matchesAccess = (item, access) => access === 'All access' || (access === 'Completely free' ? item.access === access : /free learning|audit/i.test(item.access))
-const platformFor = (item) => item.platform || (item.url.includes('ocw.mit.edu') ? 'MIT OpenCourseWare' : item.url.includes('oyc.yale.edu') ? 'Open Yale Courses' : item.url.includes('open.edu/openlearn') ? 'OpenLearn' : item.url.includes('pll.harvard.edu') ? 'Harvard Online' : item.institution)
+// 02 course index subjects filters
+const subjects = [
+  "All",
+  ...Array.from(new Set(catalog.flatMap((item) => item.subjects))).sort(),
+];
 
+// 02 course index access filters
+const accessOptions = [
+  "All access",
+  "Completely free",
+  "Free learning / audit",
+];
+
+// 02 course index access filter matches
+const matchesAccess = (item, access) =>
+  access === "All access" ||
+  (access === "Completely free"
+    ? item.access === access
+    : /free learning|audit/i.test(item.access));
+
+// 02 course index platform for
+const platformFor = (item) =>
+  item.platform ||
+  (item.url.includes("ocw.mit.edu")
+    ? "MIT OpenCourseWare"
+    : item.url.includes("oyc.yale.edu")
+      ? "Open Yale Courses"
+      : item.url.includes("open.edu/openlearn")
+        ? "OpenLearn"
+        : item.url.includes("pll.harvard.edu")
+          ? "Harvard Online"
+          : item.institution);
+
+// 01 university collections access pill
 function AccessPill({ access }) {
-  return <span className={`access-pill ${access === 'Completely free' ? 'open' : ''}`}><i />{access}</span>
+  return (
+    <span
+      className={`access-pill ${access === "Completely free" ? "open" : ""}`}
+    >
+      <i />
+      {access}
+    </span>
+  );
 }
 
+// 02 course index resource card
 function ResourceCard({ item, index }) {
-  return <article className="resource-card">
-    <span className="card-index">{String(index + 1).padStart(2, '0')}</span>
-    <div className="card-body">
-      <div className="card-meta"><span>{item.institution}</span><span>{platformFor(item)}</span><span>{item.format}</span></div>
-      <h3>{item.name}</h3><p>{item.description}</p>
-      <div className="tags">{item.subjects.slice(0, 3).map((tag) => <span key={tag}>{tag}</span>)}</div>
-    </div>
-    <div className="card-action"><div><AccessPill access={item.access} /><small>{item.certificate}</small></div><a href={item.url} target="_blank" rel="noreferrer" aria-label={`Open ${item.name}`}><ArrowUpRight /></a></div>
-  </article>
+  return (
+    <article className="resource-card">
+      <span className="card-index">{String(index + 1).padStart(2, "0")}</span>
+      <div className="card-body">
+        <div className="card-meta">
+          <span>{item.institution}</span>
+          <span>{platformFor(item)}</span>
+          <span>{item.format}</span>
+        </div>
+        <h3>{item.name}</h3>
+        <p>{item.description}</p>
+        <div className="tags">
+          {item.subjects.slice(0, 3).map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+      </div>
+      <div className="card-action">
+        <div>
+          <AccessPill access={item.access} />
+          <small>{item.certificate}</small>
+        </div>
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Open ${item.name}`}
+        >
+          <ArrowUpRight />
+        </a>
+      </div>
+    </article>
+  );
 }
 
 export default function App() {
-  const [query, setQuery] = useState(''); const [subject, setSubject] = useState('All'); const [platform, setPlatform] = useState('All platforms'); const [access, setAccess] = useState('All access'); const [showAll, setShowAll] = useState(false)
-  const portals = catalog.filter((item) => item.kind === 'portal'); const courses = catalog.filter((item) => item.kind === 'course')
-  const platforms = useMemo(() => ['All platforms', ...Array.from(new Set(courses.map(platformFor))).sort()], [courses])
-  const results = useMemo(() => { const needle = query.trim().toLowerCase(); return courses.filter((item) => (!needle || `${item.name} ${item.institution} ${platformFor(item)} ${item.description} ${item.subjects.join(' ')}`.toLowerCase().includes(needle)) && (subject === 'All' || item.subjects.includes(subject)) && (platform === 'All platforms' || platformFor(item) === platform) && matchesAccess(item, access)) }, [query, subject, platform, access])
-  const clear = () => { setQuery(''); setSubject('All'); setPlatform('All platforms'); setAccess('All access'); setShowAll(false) }
-  return <>
-    <header className="topbar"><a className="wordmark" href="#top"><b>FR</b><span>Free<br />Resources</span></a><nav><a href="#explore">Course index</a><a href="#universities">University collections</a><a href="#about">Research notes</a></nav><a className="header-cta" href="#explore">View the index <ArrowRight /></a></header>
-    <main id="top">
-      <section className="hero"><div className="hero-copy"><div className="eyebrow"><Sparkles /> Research compiled from official university sources</div><h1>Free university<br />resources.<br /><em>In one place.</em></h1><p><strong>This is a research preview, and the catalog is still growing.</strong> It collects links to university courses, lectures, and learning materials, with notes on subject, platform, and access. Every listing points to an official source.</p><div className="hero-actions"><a className="button" href="#explore">View the course index <ArrowRight /></a><a className="text-link" href="#about">Read the research notes <ArrowRight /></a></div></div><div className="hero-art"><div className="orbit"><span>MIT</span><span>YALE</span><span>HARVARD</span><span>CMU</span></div><div className="book-shape"><BookOpen /></div><small>OPEN<br />KNOWLEDGE</small></div><div className="hero-proof"><span><strong>{portals.length}</strong> university collections</span><span><strong>{courses.length}</strong> course links reviewed</span><span><strong>$0</strong> affiliate links</span></div></section>
-      <section className="university-section" id="universities"><div className="section-label">01 / University collections</div><div className="section-heading"><h2>Official collections<br />reviewed.</h2><p>These links lead to university-wide catalogs containing hundreds—and sometimes thousands—of publicly available learning resources.</p></div><div className="portal-grid">{portals.map((item, index) => <a className="portal-card" href={item.url} target="_blank" rel="noreferrer" key={item.id}><span className="portal-count">{String(index + 1).padStart(2, '0')}</span><div><span className="portal-institution">{item.institution}</span><h3>{item.name}</h3><p>{item.description}</p></div><div className="portal-footer"><AccessPill access={item.access} /><ArrowUpRight /></div></a>)}</div></section>
-      <section className="explore-section" id="explore"><div className="section-label">02 / Course index</div><div className="section-heading"><h2>Individual courses<br />and materials.</h2><p>The index can be searched by topic or filtered by subject, learning platform, and access type.</p></div><div className="filter-panel"><label className="search-field"><Search /><span className="sr-only">Search courses</span><input type="search" value={query} onChange={(e) => { setQuery(e.target.value); setShowAll(false) }} placeholder="Try psychology, climate, finance…" />{query && <button onClick={() => setQuery('')} aria-label="Clear search"><X /></button>}</label><label className="select-field"><span>Subject</span><select value={subject} onChange={(e) => setSubject(e.target.value)}>{subjects.map((option) => <option key={option}>{option}</option>)}</select><ChevronDown /></label><label className="select-field"><span>Platform</span><select value={platform} onChange={(e) => setPlatform(e.target.value)}>{platforms.map((option) => <option key={option}>{option}</option>)}</select><ChevronDown /></label><label className="select-field"><span>Access</span><select value={access} onChange={(e) => setAccess(e.target.value)}>{accessOptions.map((option) => <option key={option}>{option}</option>)}</select><ChevronDown /></label></div><div className="results-bar"><span><strong>{results.length}</strong> courses listed</span>{(query || subject !== 'All' || platform !== 'All platforms' || access !== 'All access') && <button onClick={clear}>Clear filters</button>}</div>{results.length ? <><div className="resource-list">{(showAll ? results : results.slice(0, 6)).map((item, index) => <ResourceCard item={item} index={index} key={item.id} />)}</div>{results.length > 6 && <button className="load-more" onClick={() => setShowAll(!showAll)}>{showAll ? 'Show fewer' : `Show all ${results.length}`} <ArrowRight /></button>}</> : <div className="empty-state"><BookOpen /><h3>Nothing matched.</h3><p>Try a broader topic or reset the filters.</p><button onClick={clear}>Reset filters</button></div>}</section>
-      <section className="access-section" id="about"><div><div className="section-label light">03 / Research notes</div><h2>Scope and<br />access notes.</h2><p>This directory was assembled to share researched links in a clearer format. Access terms vary, so the labels distinguish materials, credentials, and course provenance.</p></div><div className="access-steps">{[['Completely free','Materials are open at no cost. Usually no formal certificate is included.'],['Free to learn or audit','Core lessons are free; graded work or a verified credential may cost extra.'],['Genuine university learning','Many listings publish lectures, syllabi, assignments, and exams from courses taught to enrolled students. Others are university-created courses designed specifically for public learners.'],['Access is not enrollment','Studying the material does not make you an enrolled student or provide academic credit, instructor support, or an equivalent credential unless the source explicitly says so.'],['Verified at the source','Each listing links to an official source where current access terms can be confirmed.']].map(([title, copy], index) => <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{copy}</p></div><Check /></article>)}</div></section>
-    </main><footer><a className="wordmark inverted" href="#top"><b>FR</b><span>Free<br />Resources</span></a><p>A research directory of publicly accessible university learning.</p><div><a href="#explore">Course index</a><a href="#universities">University collections</a><a href="#about">Research notes</a></div></footer>
-  </>
+  const [query, setQuery] = useState("");
+  const [subject, setSubject] = useState("All");
+  const [platform, setPlatform] = useState("All platforms");
+  const [access, setAccess] = useState("All access");
+  const [showAll, setShowAll] = useState(false);
+  const portals = catalog.filter((item) => item.kind === "portal");
+  const courses = catalog.filter((item) => item.kind === "course");
+  const platforms = useMemo(
+    () => [
+      "All platforms",
+      ...Array.from(new Set(courses.map(platformFor))).sort(),
+    ],
+    [courses],
+  );
+  const results = useMemo(() => {
+    const needle = query.trim().toLowerCase();
+    return courses.filter(
+      (item) =>
+        (!needle ||
+          `${item.name} ${item.institution} ${platformFor(item)} ${item.description} ${item.subjects.join(" ")}`
+            .toLowerCase()
+            .includes(needle)) &&
+        (subject === "All" || item.subjects.includes(subject)) &&
+        (platform === "All platforms" || platformFor(item) === platform) &&
+        matchesAccess(item, access),
+    );
+  }, [query, subject, platform, access]);
+  const clear = () => {
+    setQuery("");
+    setSubject("All");
+    setPlatform("All platforms");
+    setAccess("All access");
+    setShowAll(false);
+  };
+  return (
+    <>
+      <header className="topbar">
+        <a className="wordmark" href="#top">
+          <b>FR</b>
+          <span>
+            Free
+            <br />
+            Resources
+          </span>
+        </a>
+        <nav>
+          <a href="#explore">Course index</a>
+          <a href="#universities">University collections</a>
+          <a href="#about">Research notes</a>
+        </nav>
+        <a className="header-cta" href="#explore">
+          View the index <ArrowRight />
+        </a>
+      </header>
+      <main id="top">
+        <section className="hero">
+          <div className="hero-copy">
+            <div className="eyebrow">
+              <Sparkles /> Research compiled from official university sources
+            </div>
+            <h1>
+              Free university
+              <br />
+              resources.
+              <br />
+              <em>In one place.</em>
+            </h1>
+            <p>
+              <strong>
+                This is a research preview, and the catalog is still growing.
+              </strong>{" "}
+              It collects links to university courses, lectures, and learning
+              materials, with notes on subject, platform, and access. Every
+              listing points to an official source.
+            </p>
+
+            {/* hero buttons */}
+            <div className="hero-actions">
+              <a className="button" href="#explore">
+                View the course index <ArrowRight />
+              </a>
+              <a className="text-link" href="#about">
+                Read the research notes <ArrowRight />
+              </a>
+            </div>
+          </div>
+
+          {/* hero image */}
+          <div className="hero-art">
+            <div className="orbit">
+              <span>MIT</span>
+              <span>YALE</span>
+              <span>HARVARD</span>
+              <span>CMU</span>
+            </div>
+            <div className="book-shape">
+              <BookOpen />
+            </div>
+            <small>
+              OPEN
+              <br />
+              KNOWLEDGE
+            </small>
+          </div>
+
+          {/* hero stats */}
+          <div className="hero-proof">
+            <span>
+              <strong>{portals.length}</strong> university collections
+            </span>
+            <span>
+              <strong>{courses.length}</strong> course links reviewed
+            </span>
+            <span>
+              <strong>$0</strong> affiliate links
+            </span>
+          </div>
+        </section>
+
+        {/* 01 university collections */}
+        <section className="university-section" id="universities">
+          <div className="section-label">01 / University collections</div>
+          <div className="section-heading">
+            <h2>
+              Official collections
+              <br />
+              reviewed.
+            </h2>
+            <p>
+              These links lead to university-wide catalogs containing
+              hundreds—and sometimes thousands—of publicly available learning
+              resources.
+            </p>
+          </div>
+
+          {/* university collections grid */}
+          <div className="portal-grid">
+            {portals.map((item, index) => (
+              <a
+                className="portal-card"
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                key={item.id}
+              >
+                <span className="portal-count">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <span className="portal-institution">{item.institution}</span>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                </div>
+                <div className="portal-footer">
+                  <AccessPill access={item.access} />
+                  <ArrowUpRight />
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {/* 02 course index */}
+        <section className="explore-section" id="explore">
+          <div className="section-label">02 / Course index</div>
+          <div className="section-heading">
+            <h2>
+              Individual courses
+              <br />
+              and materials.
+            </h2>
+            <p>
+              The index can be searched by topic or filtered by subject,
+              learning platform, and access type.
+            </p>
+          </div>
+
+          {/* course index filters */}
+          <div className="filter-panel">
+            <label className="search-field">
+              <Search />
+              <span className="sr-only">Search courses</span>
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setShowAll(false);
+                }}
+                placeholder="Try psychology, climate, finance…"
+              />
+              {query && (
+                <button onClick={() => setQuery("")} aria-label="Clear search">
+                  <X />
+                </button>
+              )}
+            </label>
+            <label className="select-field">
+              <span>Subject</span>
+              <select
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+              >
+                {subjects.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
+              </select>
+              <ChevronDown />
+            </label>
+            <label className="select-field">
+              <span>Platform</span>
+              <select
+                value={platform}
+                onChange={(e) => setPlatform(e.target.value)}
+              >
+                {platforms.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
+              </select>
+              <ChevronDown />
+            </label>
+            <label className="select-field">
+              <span>Access</span>
+              <select
+                value={access}
+                onChange={(e) => setAccess(e.target.value)}
+              >
+                {accessOptions.map((option) => (
+                  <option key={option}>{option}</option>
+                ))}
+              </select>
+              <ChevronDown />
+            </label>
+          </div>
+
+          {/* course index results bar */}
+          <div className="results-bar">
+            <span>
+              <strong>{results.length}</strong> courses listed
+            </span>
+            {(query ||
+              subject !== "All" ||
+              platform !== "All platforms" ||
+              access !== "All access") && (
+              <button onClick={clear}>Clear filters</button>
+            )}
+          </div>
+
+          {/* course index results list */}
+          {results.length ? (
+            <>
+              <div className="resource-list">
+                {(showAll ? results : results.slice(0, 6)).map(
+                  (item, index) => (
+                    <ResourceCard item={item} index={index} key={item.id} />
+                  ),
+                )}
+              </div>
+              {results.length > 6 && (
+                <button
+                  className="load-more"
+                  onClick={() => setShowAll(!showAll)}
+                >
+                  {showAll ? "Show fewer" : `Show all ${results.length}`}{" "}
+                  <ArrowRight />
+                </button>
+              )}
+            </>
+          ) : (
+            <div className="empty-state">
+              <BookOpen />
+              <h3>Nothing matched.</h3>
+              <p>Try a broader topic or reset the filters.</p>
+              <button onClick={clear}>Reset filters</button>
+            </div>
+          )}
+        </section>
+
+        {/* 03 research notes */}
+        <section className="access-section" id="about">
+          <div>
+            <div className="section-label light">03 / Research notes</div>
+            <h2>
+              Scope and
+              <br />
+              access notes.
+            </h2>
+            <p>
+              This directory was assembled to share researched links in a
+              clearer format. Access terms vary, so the labels distinguish
+              materials, credentials, and course provenance.
+            </p>
+          </div>
+          <div className="access-steps">
+            {[
+              [
+                "Completely free",
+                "Materials are open at no cost. Usually no formal certificate is included.",
+              ],
+              [
+                "Free to learn or audit",
+                "Core lessons are free; graded work or a verified credential may cost extra.",
+              ],
+              [
+                "Genuine university learning",
+                "Many listings publish lectures, syllabi, assignments, and exams from courses taught to enrolled students. Others are university-created courses designed specifically for public learners.",
+              ],
+              [
+                "Access is not enrollment",
+                "Studying the material does not make you an enrolled student or provide academic credit, instructor support, or an equivalent credential unless the source explicitly says so.",
+              ],
+              [
+                "Verified at the source",
+                "Each listing links to an official source where current access terms can be confirmed.",
+              ],
+            ].map(([title, copy], index) => (
+              <article key={title}>
+                <span>0{index + 1}</span>
+                <div>
+                  <h3>{title}</h3>
+                  <p>{copy}</p>
+                </div>
+                <Check />
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      {/* footer */}
+      <footer>
+        <a className="wordmark inverted" href="#top">
+          <b>FR</b>
+          <span>
+            Free
+            <br />
+            Resources
+          </span>
+        </a>
+        <p>A research directory of publicly accessible university learning.</p>
+        <div>
+          <a href="#explore">Course index</a>
+          <a href="#universities">University collections</a>
+          <a href="#about">Research notes</a>
+        </div>
+      </footer>
+    </>
+  );
 }
