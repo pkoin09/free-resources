@@ -1,12 +1,11 @@
 import { useMemo, useState } from "react";
 import {
-  ArrowRight,
   ArrowUpRight,
+  ArrowRight,
   BookOpen,
   Check,
   ChevronDown,
   Search,
-  Sparkles,
   X,
 } from "lucide-react";
 import catalog from "./catalog.json";
@@ -131,7 +130,7 @@ export default function App() {
   return (
     <>
       <header className="topbar">
-        <a className="wordmark" href="/">
+        <a className="wordmark" href="../">
           <b>FR</b>
           <span>
             Free
@@ -139,13 +138,11 @@ export default function App() {
             Resources
           </span>
         </a>
-        <nav className="top-tabs">
-          <a href="/" aria-current="page">Courses</a>
-          <a href="/jobs">Jobs</a>
+        <nav className="top-tabs" aria-label="Main navigation">
+          <a href="../">Home</a>
+          <a href="./" aria-current="page">Courses</a>
+          <a href="../jobs/">Jobs</a>
         </nav>
-        <a className="header-cta" href="#explore">
-          View the index <ArrowRight />
-        </a>
       </header>
       <nav className="sub-tabs" aria-label="Course sections">
         <a href="#explore">Course index</a>
@@ -153,70 +150,6 @@ export default function App() {
         <a href="#about">Research notes</a>
       </nav>
       <main id="top">
-        <section className="hero">
-          <div className="hero-copy">
-            <div className="eyebrow">
-              <Sparkles /> Research compiled from official university sources
-            </div>
-            <h1>
-              Free university
-              <br />
-              resources.
-              <br />
-              <em>In one place.</em>
-            </h1>
-            <p>
-              <strong>
-                This is a research preview, and the catalog is still growing.
-              </strong>{" "}
-              It collects links to university courses, lectures, and learning
-              materials, with notes on subject, platform, and access. Every
-              listing points to an official source.
-            </p>
-
-            {/* hero buttons */}
-            <div className="hero-actions">
-              <a className="button" href="#explore">
-                View the course index <ArrowRight />
-              </a>
-              <a className="text-link" href="#about">
-                Read the research notes <ArrowRight />
-              </a>
-            </div>
-          </div>
-
-          {/* hero image */}
-          <div className="hero-art">
-            <div className="orbit">
-              <span>MIT</span>
-              <span>YALE</span>
-              <span>HARVARD</span>
-              <span>CMU</span>
-            </div>
-            <div className="book-shape">
-              <BookOpen />
-            </div>
-            <small>
-              OPEN
-              <br />
-              KNOWLEDGE
-            </small>
-          </div>
-
-          {/* hero stats */}
-          <div className="hero-proof">
-            <span>
-              <strong>{portals.length}</strong> university collections
-            </span>
-            <span>
-              <strong>{courses.length}</strong> course links reviewed
-            </span>
-            <span>
-              <strong>$0</strong> affiliate links
-            </span>
-          </div>
-        </section>
-
         {/* 01 university collections */}
         <section className="university-section" id="universities">
           <div className="section-label">01 / University collections</div>
@@ -429,7 +362,7 @@ export default function App() {
 
       {/* footer */}
       <footer>
-        <a className="wordmark inverted" href="/">
+        <a className="wordmark inverted" href="../">
           <b>FR</b>
           <span>
             Free
@@ -439,7 +372,7 @@ export default function App() {
         </a>
         <p>A research directory of publicly accessible university learning.</p>
         <div>
-          <a href="/jobs">South Bay Job Guide</a>
+          <a href="../jobs/">South Bay Job Guide</a>
         </div>
       </footer>
     </>

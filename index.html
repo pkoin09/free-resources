@@ -3,13 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A carefully labeled directory of free university learning from official sources." />
+    <meta name="description" content="Free Resources brings together carefully reviewed university learning and Greater South Bay job resources." />
     <meta name="theme-color" content="#f4f1e9" />
-    <title>Free Resources — University learning, clearly labeled</title>
+    <title>Free Resources — Learning and work, in one place</title>
+    <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#explore">Skip to course search</a>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="topbar home-topbar">
+      <a class="wordmark" href="./">
+        <b>FR</b>
+        <span>Free<br />Resources</span>
+      </a>
+      <nav class="top-tabs" aria-label="Main navigation">
+        <a href="./" aria-current="page">Home</a>
+        <a href="./courses/">Courses</a>
+        <a href="./jobs/">Jobs</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="home-hero">
+        <div class="home-hero-copy">
+          <div class="eyebrow">A growing public resource directory</div>
+          <h1>Useful resources.<br /><em>In one place.</em></h1>
+          <p>Explore university learning and local job resources, gathered with care and linked to their original sources.</p>
+        </div>
+        <div class="home-choices" aria-label="Explore resources">
+          <a class="home-choice" href="./courses/">
+            <span class="home-choice-number">01 / LEARN</span>
+            <h2>Courses</h2>
+            <p>Browse free university courses, lectures, and learning materials.</p>
+            <span class="home-choice-link">Explore courses <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="home-choice" href="./jobs/">
+            <span class="home-choice-number">02 / WORK</span>
+            <h2>Jobs</h2>
+            <p>Find a guide to work opportunities, training, and support in the Greater South Bay.</p>
+            <span class="home-choice-link">Explore jobs <span aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="wordmark inverted" href="./">
+        <b>FR</b>
+        <span>Free<br />Resources</span>
+      </a>
+      <p>A growing directory of learning and work resources.</p>
+      <div>
+        <a href="./courses/">Courses</a>
+        <a href="./jobs/">Jobs</a>
+      </div>
+    </footer>
   </body>
 </html>

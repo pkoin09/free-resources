@@ -8,7 +8,8 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         main: 'index.html',
-        jobs: 'src/jobs/index.html',
+        courses: 'courses/index.html',
+        jobs: 'jobs/index.html',
       },
     },
   },
