@@ -1,6 +1,27 @@
 node_modules/
 dist/
+/work/
+/src/jobs/
 .DS_Store
 *.log
+
+# Local secrets and machine-specific settings
+.env
+.env.*
+!.env.example
+.idea/
+
+# Personal document and office export files
+*.doc
+*.docx
+*.odt
+*.rtf
+*.pdf
+*.xls
+*.xlsx
+*.ods
+*.ppt
+*.pptx
+*.key
 CLAUDE.md
 docs/agents/
