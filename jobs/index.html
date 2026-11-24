@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Greater South Bay Job Guide — where to find work, training, and employment support in the South Bay." />
+    <meta name="description" content="An independent guide to job sources and work opportunities across the South Bay, Peninsula, San Francisco, and East Bay." />
     <meta name="theme-color" content="#f4f1e9" />
-    <title>South Bay Job Guide — Work, Training & Support</title>
+    <title>Free Resources — Find Work Across the Bay Area</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <a class="skip-link" href="#guide">Skip to guide</a>
+    <a class="skip-link" href="#category-results">Skip to job sources</a>
     <header class="topbar">
       <a class="wordmark" href="../">
         <b>FR</b>
@@ -30,154 +30,137 @@
     </header>
     <nav class="sub-tabs" aria-label="Job guide sections">
       <a href="#guide">Find work</a>
-      <a href="#opportunities">Current opportunities</a>
-      <a href="#about">How this works</a>
+      <a href="#category-results">Browse sources</a>
+        <a href="#about">Before you apply</a>
     </nav>
     <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <div class="eyebrow">
-            Greater South Bay
-          </div>
-          <h1>
-            Find work.
-            <br />
-            <em>Right now.</em>
-          </h1>
-          <p>
-            <strong>
-              A curated guide to jobs, gigs, training, and support in the South Bay.
-            </strong>
-            Organized by what you need — not where to search.
-          </p>
-        </div>
-      </section>
-
       <section class="category-section" id="guide">
-        <div class="section-label">01 / What kind of work?</div>
+        <div class="section-label">01 / Job search paths</div>
         <div class="section-heading">
           <h2>
-            Choose your
+            Find work across
             <br />
-            situation.
+            the Bay Area.
           </h2>
           <p>
-            Choose a path to see the kind of local resources this guide will collect.
+            San Jose · Peninsula · San Francisco · East Bay<br /><br />
+            Search for a kind of work, or choose a path below. We’ll point you to job sites and employment resources from our initial research.
           </p>
         </div>
-        <div class="category-grid">
-          <a class="category-card" href="#work-now">
-            <span class="category-icon">⚡</span>
+        <div class="job-search-controls">
+          <label class="job-search-field">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg>
+            <span class="sr-only">Search job sites by role or keyword</span>
+            <input id="job-search" type="search" placeholder="Try electrician, warehouse, cook…" autocomplete="off" />
+            <button id="clear-job-search" type="button" aria-label="Clear job search" hidden>×</button>
+          </label>
+          <label class="job-location-field">
+            <span class="sr-only">Search area</span>
+            <select id="job-location">
+              <option value="San Francisco Bay Area">Across the corridor</option>
+              <option value="San Jose, CA">San Jose</option>
+              <option value="Mountain View, CA">Peninsula / Mountain View</option>
+              <option value="San Francisco, CA">San Francisco</option>
+              <option value="Oakland, CA">Oakland</option>
+            </select>
+          </label>
+          <label class="job-location-field">
+            <span class="sr-only">Posted date</span>
+            <select id="job-freshness">
+              <option value="7" selected>Posted in the past week</option>
+              <option value="1">Posted in the past 24 hours</option>
+              <option value="30">Posted in the past month</option>
+              <option value="0">Any posting date</option>
+            </select>
+          </label>
+        </div>
+        <p class="search-note">This prepares searches on job sites using your role, area, and date range where the site supports it. Their results open separately; this page does not pull in or verify live listings.</p>
+        <div class="category-grid" role="group" aria-label="Choose a job search path">
+          <button class="category-card" type="button" data-select-category="work-now" aria-pressed="true" aria-controls="category-results">
+            <span class="category-index">01</span>
             <h3>Work now</h3>
             <p>Same-day or next-day income. Day labor, gigs, immediate-start roles.</p>
-          </a>
-          <a class="category-card" href="#full-time">
-            <span class="category-icon">📋</span>
+            <span class="category-cta">See sources <span aria-hidden="true">↘</span></span>
+          </button>
+          <button class="category-card" type="button" data-select-category="full-time" aria-pressed="false" aria-controls="category-results">
+            <span class="category-index">02</span>
             <h3>Full-time</h3>
             <p>Regular employment with benefits. Local employers, government, healthcare.</p>
-          </a>
-          <a class="category-card" href="#part-time">
-            <span class="category-icon">🕐</span>
+            <span class="category-cta">See sources <span aria-hidden="true">↘</span></span>
+          </button>
+          <button class="category-card" type="button" data-select-category="part-time" aria-pressed="false" aria-controls="category-results">
+            <span class="category-index">03</span>
             <h3>Part-time</h3>
             <p>Flexible hours. Retail, hospitality, campus jobs, evening/weekend shifts.</p>
-          </a>
-          <a class="category-card" href="#temporary">
-            <span class="category-icon">📦</span>
+            <span class="category-cta">See sources <span aria-hidden="true">↘</span></span>
+          </button>
+          <button class="category-card" type="button" data-select-category="temporary" aria-pressed="false" aria-controls="category-results">
+            <span class="category-index">04</span>
             <h3>Temporary</h3>
             <p>Contract, seasonal, project-based. Staffing agencies, temp-to-hire.</p>
-          </a>
-          <a class="category-card" href="#skilled-trade">
-            <span class="category-icon">🔧</span>
+            <span class="category-cta">See sources <span aria-hidden="true">↘</span></span>
+          </button>
+          <button class="category-card" type="button" data-select-category="skilled-trade" aria-pressed="false" aria-controls="category-results">
+            <span class="category-index">05</span>
             <h3>Skilled / Trade</h3>
             <p>Technical, licensed, apprenticeship. Construction, IT, healthcare, manufacturing.</p>
-          </a>
-          <a class="category-card" href="#just-need-work">
-            <span class="category-icon">🎯</span>
+            <span class="category-cta">See sources <span aria-hidden="true">↘</span></span>
+          </button>
+          <button class="category-card" type="button" data-select-category="just-need-work" aria-pressed="false" aria-controls="category-results">
+            <span class="category-index">06</span>
             <h3>Just need work</h3>
-            <p>No preference — show me everything hiring near me right now.</p>
-          </a>
+            <p>No preference. Start with broad searches and local employment services.</p>
+            <span class="category-cta">See sources <span aria-hidden="true">↘</span></span>
+          </button>
         </div>
-        <div class="category-details">
-          <section id="work-now">
-            <h3>Work now</h3>
-            <p>Resources for same-day and immediate-start work are being collected.</p>
-          </section>
-          <section id="full-time">
-            <h3>Full-time</h3>
-            <p>Local full-time openings and direct employer links are being collected.</p>
-          </section>
-          <section id="part-time">
-            <h3>Part-time</h3>
-            <p>Part-time and flexible-schedule resources are being collected.</p>
-          </section>
-          <section id="temporary">
-            <h3>Temporary</h3>
-            <p>Temporary, seasonal, and contract resources are being collected.</p>
-          </section>
-          <section id="skilled-trade">
-            <h3>Skilled / Trade</h3>
-            <p>Skilled roles, trades, and apprenticeship resources are being collected.</p>
-          </section>
-          <section id="just-need-work">
-            <h3>Just need work</h3>
-            <p>Local job sources across different fields will be collected here.</p>
-          </section>
-        </div>
+        <section class="source-panel" id="category-results" role="region" aria-labelledby="source-category-title"></section>
+        <section class="local-help" aria-labelledby="local-help-title">
+          <div class="section-label">Local support</div>
+          <div class="local-help-heading">
+            <h3 id="local-help-title">Get help with your search.</h3>
+            <p>Public workforce organizations offer local job-search support, career guidance, and training resources.</p>
+          </div>
+          <ul class="local-help-list">
+            <li><a href="https://www.work2future.org/" target="_blank" rel="noopener noreferrer"><span><strong>work2future</strong><small>San José and south Santa Clara County</small></span><span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://novaworks.org/career-seekers/" target="_blank" rel="noopener noreferrer"><span><strong>NOVAworks</strong><small>Peninsula and north Santa Clara County</small></span><span aria-hidden="true">↗</span></a></li>
+            <li><a href="https://www.eastbayworks.com/job-seekers/" target="_blank" rel="noopener noreferrer"><span><strong>EASTBAYWorks</strong><small>Alameda and Contra Costa counties</small></span><span aria-hidden="true">↗</span></a></li>
+          </ul>
+        </section>
       </section>
 
-      <section class="roundup-section" id="opportunities">
-        <div class="section-label">02 / Current opportunities</div>
-        <div class="section-heading">
-          <h2>
-            This week's
-            <br />
-            curated listings.
-          </h2>
-            <p>Curated local openings will appear here once weekly research begins.</p>
-        </div>
-        <div class="roundup-meta-bar">
-          <span class="roundup-date" id="roundup-date">Listings have not started yet</span>
-        </div>
-        <div class="roundup-list" id="roundup-list">
-          <div class="empty-state">
-            <p>The opportunity list is being prepared.</p>
-            <p style="font-size: .85rem; color: var(--ink-mid); margin-top: .5rem;">For now, use the categories above to explore the guide structure.</p>
-          </div>
-        </div>
-      </section>
 
       <section class="info-section" id="about">
         <div>
-          <div class="section-label light">03 / How this works</div>
+          <div class="section-label light">02 / Before you apply</div>
           <h2>
-            Not another
+            Check details
             <br />
-            job board.
+            at the source.
           </h2>
             <p>
-            This page is a starting structure for a local work guide. Its resource links and listings have not been added yet.
+            Free Resources is independent. We are not affiliated with or employed by the companies, agencies, or platforms linked here. We do not guarantee openings or follow up for applicants. You are responsible for contacting the source and confirming the employer, job, pay, schedule, and terms.
           </p>
         </div>
         <div class="info-steps">
           <article>
             <span>01</span>
             <div>
-              <h3>Pick your situation</h3>
-              <p>The categories above link to relevant sources — not generic job boards.</p>
+              <h3>Choose a path</h3>
+              <p>Selecting a category updates the source list on this page.</p>
             </div>
           </article>
           <article>
             <span>02</span>
             <div>
-              <h3>Check the roundup</h3>
-              <p>Weekly curated listings from trusted local sources.</p>
+              <h3>Open the source</h3>
+              <p>Links go to the employer, job platform, staffing provider, or public service named in the list.</p>
             </div>
           </article>
           <article>
             <span>03</span>
             <div>
-              <h3>Apply at the source</h3>
-              <p>Every link goes to the employer or official posting. No middlemen.</p>
+              <h3>Confirm the terms</h3>
+              <p>Check the employer, job, location, pay, schedule, and application route before sharing information or accepting work.</p>
             </div>
           </article>
           <article>
@@ -199,11 +182,11 @@
           Resources
         </span>
       </a>
-      <p>Greater South Bay Job Guide — Curated opportunities, not homework.</p>
+      <p>Independent job-source research for the Bay Area corridor.</p>
       <div>
         <a href="../">Free University Resources</a>
         <a href="#guide">Work guide</a>
-        <a href="#opportunities">This week's listings</a>
+        <a href="#about">Before you apply</a>
       </div>
     </footer>
     <script type="module" src="./main.js"></script>
