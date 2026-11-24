@@ -2,6 +2,8 @@ node_modules/
 dist/
 /work/
 /src/jobs/
+/research/
+/GSB-JOB-RESOURCE-PLAN.md
 .DS_Store
 *.log
 
